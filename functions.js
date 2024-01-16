@@ -8,7 +8,7 @@ class Functions {
     }
 
     Resolution1() {
-        //discover the number of steps to arrive in Y;
+        //Discover the number of steps to arrive in Y;
 
 
         while (this.initalPoint < this.endPath) {
@@ -21,7 +21,7 @@ class Functions {
 
 
     Resolution2() {
-        // set the object that no repeat.
+        //Set the object that no repeat.
         let vetor = ["a", "b", "a", "a", "c", "b"];
         let elements = [];
         let EqualItems = [];
@@ -39,7 +39,7 @@ class Functions {
         }
 
     }
-
+    //Move the first string object to the next array's position
     Resolution3() {
         let min = 1;
         let max = 3;
@@ -49,12 +49,12 @@ class Functions {
         let q = Math.floor(Math.random() * max - min + 1) + min;
 
         while (x < q) {
-            
+
             let changePostion = listaDeCompras[x];
             listaDeCompras[x] = listaDeCompras[x + 1];
             listaDeCompras[x + 1] = changePostion;
 
-           
+
 
             for (let i in listaDeCompras) {
                 console.log(listaDeCompras[i]);
@@ -64,9 +64,31 @@ class Functions {
         }
 
     }
+    Resolution4() {
+        var allLeters = [];
+        var letter2 = [];
+        let maxGap = 0;
+        var counter = 0;
+        var input = "ab";
+        var allLeters = input.split("");
+        var letter = allLeters[0].charCodeAt(0).toString(2);
+        var letter2 = allLeters[1].charCodeAt(0).toString(2);
+        var allToBinary = letter + letter2
+        
+        console.log(allToBinary);
+        for (let x of allToBinary) {
+            if (x === '0') {
+                counter++;
+
+            } else {
+                maxGap = Math.max(maxGap, counter);
+                counter = 0;
+            }
+        }
+        console.log(maxGap);
+        
+    }
 }
-
-
 module.exports = {
     Functions,
 }
